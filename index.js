@@ -1,6 +1,6 @@
 
 const express = require('express')
-var taxe = require('./routers')
+var taxe = require('./routers/taxeRouter')
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({
@@ -11,8 +11,6 @@ var requestTime =  (req, res, next) => {
     req.requestTime = Date.now();
     next();
   };
-
-var router = express.Router();
 
 const port = 3000
 //app.use(requestTime);
